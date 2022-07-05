@@ -8,7 +8,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -35,6 +34,7 @@ function App() {
   const toggleMode = () => {
     // removeBodyClasses();
     // document.body.classList.add('bg-' + cls)
+    // document.title = 'TextUtil - Dark Mode'
     if (mode === "light") {
       setMode("dark")
       document.body.style.backgroundColor = "#042743";
@@ -55,10 +55,10 @@ function App() {
     <div className="container my-3"> 
     <Switch>
           <Route exact path="/about">
-            <About />
+            <About mode={mode} />
           </Route>
           <Route exact path="/">
-          <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>       
+          <TextForm showAlert={showAlert} heading="Try TextUtils - Word counter, Character counter, Remove extra spaces" mode={mode}/>       
           </Route>
     </Switch>
     </div>
