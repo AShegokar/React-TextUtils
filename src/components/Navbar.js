@@ -36,6 +36,11 @@ export default function Navbar(props) {
                   {props.aboutText}
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">
+                  {props.contactText}
+                </Link>
+              </li>
             </ul>
             <div className="d-flex">
               <div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode('primary')}} style={{height:'30px', width:'60px', cursor:'pointer'}}></div>
@@ -64,6 +69,7 @@ export default function Navbar(props) {
 Navbar.propTypes = {
   title: PropTypes.string.isRequired,
   aboutText: PropTypes.string.isRequired,
+
 };
 
 Navbar.defaultProps = {

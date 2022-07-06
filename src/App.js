@@ -2,6 +2,7 @@ import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import ContactUs from './components/ContactUs';
 import React, {useState} from 'react';
 import Alert from './components/Alert';
 import {
@@ -50,10 +51,13 @@ function App() {
   return (
     <>
     <Router>
-    <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode}/>
+    <Navbar title="TextUtils" aboutText="About" contactText="Contact Us" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className="container my-3"> 
     <Switch>
+          <Route exact path="/contact">
+            <ContactUs mode={mode} />
+          </Route>
           <Route exact path="/about">
             <About mode={mode} />
           </Route>
